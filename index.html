@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sistemas Operativos en Red – Repaso completo SMX2B</title>
+<style>
+:root{color-scheme:dark;--bg:#2a1710;--card:#3b2217;--line:#5a3624;--red:#c0302a;--yel:#f4b81c;--tx:#f5e9d8;--mut:#c9b49c;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:60px}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.55 system-ui,Segoe UI,sans-serif}
+header{background:linear-gradient(135deg,#1c0e09,var(--red));padding:36px 20px;text-align:center;border-bottom:4px solid var(--yel)}
+h1{margin:0;font-size:clamp(24px,5vw,38px);color:var(--yel)}header p{margin:6px 0 0;color:var(--tx)}
+nav{position:sticky;top:0;z-index:5;background:#1c0e09;display:flex;gap:6px;overflow-x:auto;padding:8px 12px;border-bottom:1px solid var(--line)}
+nav a{color:var(--yel);text-decoration:none;white-space:nowrap;padding:5px 11px;border-radius:14px;font-size:14px}nav a:hover{background:var(--red);color:#fff}
+main{max-width:900px;margin:auto;padding:16px}
+section{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--red);border-radius:10px;padding:16px 20px;margin:18px 0}
+h2{margin:0 0 8px;color:var(--yel);font-size:22px}h3{color:#ff8a7a;margin:14px 0 4px;font-size:16px}
+ul{margin:4px 0;padding-left:22px}li{margin:2px 0}b{color:var(--yel)}
+code{background:#1c0e09;color:var(--yel);padding:1px 6px;border-radius:4px;font-size:14px}
+.tw{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:14px}th,td{border:1px solid var(--line);padding:6px 9px;text-align:left}th{background:var(--red);color:#fff}
+.note{background:#1c0e09;border-left:4px solid var(--yel);padding:8px 12px;margin:10px 0;border-radius:6px;color:var(--mut);font-size:14px}
+#quiz{border-left-color:var(--yel)}
+.bar{height:8px;background:#1c0e09;border-radius:4px;overflow:hidden;margin:6px 0 14px}.bar i{display:block;height:100%;width:0;background:var(--yel);transition:width .25s}
+.q{font-size:18px;font-weight:600;margin:6px 0 12px}
+.opt{display:block;width:100%;text-align:left;margin:7px 0;padding:11px 14px;background:#2a1710;color:var(--tx);border:2px solid var(--line);border-radius:8px;font:inherit;cursor:pointer}
+.opt:hover:not(:disabled){border-color:var(--yel)}.opt:disabled{cursor:default}
+.opt.ok{background:#2f5a24;border-color:#7fd35e}.opt.bad{background:#7a1c18;border-color:var(--red)}
+.nav{display:flex;justify-content:space-between;align-items:center;margin-top:14px;gap:10px}
+.arrow{background:var(--red);color:#fff;border:0;border-radius:50%;width:48px;height:48px;font-size:22px;cursor:pointer}
+.arrow:disabled{background:var(--line);color:var(--mut);cursor:default}.arrow:hover:not(:disabled){background:var(--yel);color:#2a1710}
+.btn{background:var(--yel);color:#2a1710;border:0;border-radius:8px;padding:10px 18px;font:inherit;font-weight:700;cursor:pointer}
+.res{text-align:center}.res .big{font-size:48px;color:var(--yel);font-weight:800}
+footer{text-align:center;color:var(--mut);padding:20px;font-size:13px}
+</style></head><body>
+<header><h1>Sistemas Operativos en Red</h1><p>Repaso para el examen · SMX2B · Tareas 1 a 8 + test de 33 preguntas</p></header>
+<nav><a href="#t1">T1 S.O.</a><a href="#t2">T2 Server</a><a href="#t3">T3 Instalación</a><a href="#t4">T4 Particiones</a><a href="#t5">T5 Procesos</a><a href="#t6">T6 Client</a><a href="#t7">T7 Remoto</a><a href="#t8">T8 Recursos</a><a href="#quiz">Test ▶</a></nav>
+<main>
+
+<section id="t1"><h2>Tasca 1 · Sistemas operativos</h2>
+<ul><li><b>S.O.:</b> software que gestiona todo entre el hardware y el software.</li>
+<li><b>Funciones:</b> administrar recursos de hardware, comunicar usuario y máquina, gestionar archivos, dar interfaz visual.</li>
+<li><b>Tipos:</b> móvil (Android, iOS), ordenador (Linux, Windows, macOS), servidor (Ubuntu Server, Windows Server).</li>
+<li><b>Partes:</b> Kernel, UI (interfaz), Drivers, Sistema de ficheros.</li></ul>
+<h3>Funciones principales del S.O. (presentación)</h3><ul><li><b>Gestión de recursos:</b> administra de forma eficiente y segura CPU, memoria y periféricos.</li><li><b>Gestión de procesos:</b> ejecuta, para y controla programas y tareas que piden recursos.</li><li><b>Administración de memoria:</b> controla la memoria de cada programa para que no interfieran entre ellos.</li><li><b>Gestión de ficheros:</b> organiza archivos y directorios en los dispositivos de almacenamiento.</li><li><b>Control de dispositivos:</b> usa controladores (drivers) para unificar el acceso al hardware.</li><li><b>Seguridad y usuarios:</b> permisos, contraseñas y protección de datos frente a usuarios no autorizados.</li><li><b>Interfaz de usuario:</b> entorno visual o de comandos para interactuar con el equipo.</li></ul>
+<div class="tw"><table><tr><th></th><th>Propietario</th><th>Libre</th></tr>
+<tr><td>Código</td><td>Cerrado, con derechos de autor</td><td>Fuente abierta: se puede estudiar, cambiar y compartir</td></tr>
+<tr><td>Ventajas</td><td>Más fácil de usar, soporte técnico</td><td>Gratuito, privacidad, personalizable</td></tr>
+<tr><td>Inconveniente</td><td>Licencia de pago</td><td>Requiere conocimientos para configurarlo y mantenerlo</td></tr></table></div></section>
+
+<section id="t2"><h2>Tasca 2 · Windows Server</h2>
+<h3>Historial</h3><p>NT 3.1 (1993) → NT 3.5 (1994) → NT 3.51 (1995) → NT 4.0 (1996) → 2000 → 2003 → 2003 R2 (2005) → 2008 → 2008 R2 (2009) → 2012 → 2012 R2 (2013) → 2016 → 2019 (2018) → 2022 (2021) → <b>2025 (2024, la actual)</b>.</p>
+<h3>Obtener la ISO</h3><p>Microsoft Evaluation Center → buscar versión → ISO 64 bits → idioma → formulario → descargar → montar en VM → instalar (edición y tipo) → Windows Update → activar la evaluación. La versión de evaluación dura <b>180 días</b>; se puede comprar licencia y convertirla.</p>
+<h3>Características</h3><ul><li>Ediciones Standard y Datacenter; instalación <b>Server Core</b> (sin gráfica) o <b>Desktop Experience</b> (con gráfica).</li><li>Hyper-V, Active Directory, DNS, DHCP, IIS, servidor de archivos e impresoras, PowerShell, Windows Admin Center, contenedores, integración con Azure.</li></ul>
+<div class="tw"><table><tr><th>Edición</th><th>Uso</th><th>Virtualización</th><th>Precio 16 núcleos</th></tr>
+<tr><td>Standard</td><td>Servidores físicos / poca virtualización</td><td>2 VM por licencia</td><td>1.042,79 €</td></tr>
+<tr><td>Datacenter</td><td>Centros de datos</td><td>VM ilimitadas</td><td>6.004,05 €</td></tr>
+<tr><td>Datacenter: Azure Edition</td><td>Entornos Azure</td><td>—</td><td>—</td></tr></table></div>
+<p>Standard 16 núcleos + 10 CAL: 1.638,68 €.</p>
+<h3>Requisitos mínimos</h3><ul><li>CPU 64 bits a 1,4 GHz · RAM 2 GB · Disco 32 GB · Ethernet 1 Gbit/s · Gráfica 1024×768 · UEFI 2.3.1c (Secure Boot y TPM para ciertas funciones).</li></ul></section>
+
+<section id="t3"><h2>Tasca 3 · Instalación Windows Server (VirtualBox)</h2>
+<ul><li><b>VM:</b> RAM 4/8 GB · CPU 4 núcleos · disco 60 GB · 2 adaptadores de red (interna y NAT).</li>
+<li><b>Nombre:</b> WindowServer</li><li><b>Red interna:</b> IP estática <code>173.100.10.10/16</code>, gateway <code>173.100.10.1</code></li>
+<li><b>Red NAT:</b> IP y gateway por <b>DHCP</b>.</li></ul></section>
+
+<section id="t4"><h2>Tasca 4 · Particiones y utilidades</h2>
+<ul><li>Crear partición de 20 GB (Administración de discos) → aparece como volumen (G:\) → eliminarla y extender C: para dejar el disco como al principio.</li>
+<li><b>Configuración de Windows / Panel de control:</b> dos formas de ver las herramientas del sistema. En <i>Personalización</i>: fondo, colores, pantalla de bloqueo, temas, fuentes, inicio, barra de tareas.</li>
+<li><b>Sistema → Almacenamiento:</b> capacidad de discos, espacio usado/libre y archivos temporales.</li>
+<li><b>Optimizar unidades:</b> analiza y optimiza (desfragmenta) para que el equipo vaya más eficiente.</li>
+<li><b>Acerca de:</b> procesador, RAM, ID de producto, tipo de sistema (64 bits), edición y versión (Server 2022 Datacenter Evaluation, 21H2).</li></ul></section>
+
+<section id="t5"><h2>Tasca 5 · Gestión de procesos</h2>
+<ul><li><b>Proceso:</b> programa en ejecución. <b>Programa:</b> conjunto de instrucciones. <b>PID:</b> identificador único de cada proceso.</li>
+<li><b>Servicio:</b> proceso en segundo plano que da funciones al sistema (autenticación, red, impresión, actualizaciones…). Si se detiene uno necesario, pueden fallar el inicio de sesión, recursos compartidos, impresión y servicios dependientes.</li>
+<li><b>svchost.exe:</b> proceso muy habitual que ejecuta distintos servicios de Windows. Hay varias instancias, cada una con distinto PID, por eso es normal ver muchos con este nombre.</li><li><b>Programa vs proceso:</b> <code>notepad.exe</code> en disco es el programa; <code>notepad.exe</code> ejecutándose es el proceso, y usa CPU, RAM, disco, red…</li><li><b>Servicios típicos:</b> DNS Server, DHCP Server, Active Directory Domain Services, Windows Update, Print Spooler. Funcionan aunque nadie interactúe con el servidor.</li>
+<li><b>No finalizar</b> procesos del sistema sin saber su función: se pueden perder datos o dejar el sistema inestable.</li></ul>
+<div class="tw"><table><tr><th>Herramienta</th><th>Listar</th><th>Finalizar</th></tr>
+<tr><td>Gráfica</td><td>Administrador de tareas</td><td>Finalizar tarea</td></tr>
+
+<tr><td>PowerShell</td><td><code>Get-Process</code></td><td><code>Stop-Process -Name notepad</code></td></tr>
+<tr><td>CMD</td><td><code>tasklist</code> (<code>| findstr svchost</code>)</td><td><code>taskkill /PID 1234</code> · <code>taskkill /IM notepad.exe</code></td></tr></table></div>
+<ul><li><code>Get-Process -Name notepad</code> busca un proceso concreto. <code>Get-Process | Sort-Object CPU -Descending</code> → ordena por consumo de CPU.</li><li><code>Start-Process notepad</code> crea el proceso. <code>Get-Service</code> lista servicios (<code>Get-Service | Where-Object {$_.Status -eq "Running"}</code> = los que están en ejecución).</li><li>Atajo al <b>Administrador de tareas</b>: <code>Ctrl + Shift + Esc</code>. Muestra nombre, CPU, memoria, disco, red y PID, y permite finalizar procesos que no responden. También existe el <b>Monitor de recursos</b>.</li>
+<li><code>/PID</code> mata un proceso concreto; <code>/IM</code> mata <b>todos</b> los que tengan ese nombre.</li></ul>
+<h3>Servidor con CPU al 95%</h3><p>Identificar proceso → localizar PID → consultar con PowerShell → ¿es legítimo? → decidir si se finaliza y justificarlo → proponer solución para que no se repita. Flujo: <b>Identificar → Analizar → Controlar → Solucionar</b>.</p>
+<h3>Ciclo de vida de un proceso</h3><p><b>Creación</b> (el S.O. reserva el <b>PCB</b>) → <b>Preparado / Ready</b> (en memoria, esperando CPU) → <b>Ejecución / Running</b> (tiene la CPU) → <b>Espera / Blocked</b> (aguarda un evento: E/S, disco, entrada del usuario; al completarse vuelve a Preparado) → <b>Finalización / Terminated</b> (acabó o error) → <b>Liberación de recursos</b> (limpia memoria, cierra ficheros y lo elimina de la tabla de procesos).</p><ul><li><b>PCB (Process Control Block):</b> guarda la información del proceso (estado, PID, memoria…).</li><li><b>Planificador (scheduler):</b> decide qué proceso obtiene la CPU.</li></ul>
+<h3>Prioridad de los procesos</h3><p>De mayor a menor: Tiempo real → Alta → Por encima de lo normal → <b>Normal</b> → Por debajo de lo normal → Baja.</p>
+<h3>Proceso que no responde</h3><p>1) Identificar el proceso · 2) Consultar CPU y RAM · 3) Comprobar el PID · 4) Finalizarlo si es necesario · 5) Investigar la causa. En un servidor de producción, con cuidado.</p>
+<h3>Monitorización</h3><ul><li><b>CPU:</b> procesos que consumen mucho · <b>RAM:</b> mucha memoria · <b>Disco:</b> muchas operaciones de E/S · <b>Red:</b> mucho tráfico.</li><li>Herramientas en Windows Server: Administrador de tareas y Monitor de recursos.</li></ul></section>
+
+<section id="t6"><h2>Tasca 6 · Windows Client</h2>
+<p><b>Versiones desktop:</b> 1.0 (1985) · 2.0 (1987) · 3.0 (1990) · 3.1 (1992) · 95 (1995) · 98 (1998) · 2000 y Me (2000) · XP (2001) · Vista (2007) · 7 (2009) · 8 (2012) · 8.1 (2013) · 10 (2015) · <b>11 (2021, la actual)</b>.</p>
+<p><b>Windows Client:</b> diseñado para ordenadores personales. <b>Características:</b> interfaz gráfica, multitarea, compatibilidad con apps y dispositivos, redes, seguridad integrada, accesibilidad.</p>
+<p><b>Ediciones:</b> Home (doméstico) · Pro (profesionales y pequeñas empresas) · Enterprise (grandes organizaciones) · Education (centros educativos).</p>
+<div class="tw"><table><tr><th></th><th>Client (10/11)</th><th>Server (2022)</th></tr>
+<tr><td>Objetivo</td><td>Uso diario personal/trabajo</td><td>Dar servicios y recursos a otros equipos</td></tr>
+<tr><td>Tareas</td><td>Navegador, ofimática, juegos</td><td>Servicios de red, BBDD, web, gestión</td></tr>
+<tr><td>Usuarios</td><td>Una persona</td><td>Muchos (con Remote Desktop Services y licencias)</td></tr>
+<tr><td>Roles</td><td>Funciones básicas de red</td><td>Roles: archivos, DNS, DHCP, escritorio remoto</td></tr>
+<tr><td>Interfaz</td><td>Gráfica</td><td>Gráfica o Server Core</td></tr></table></div>
+<p><b>VM cliente:</b> CPU 2/4 núcleos · RAM 8 GB · HDD 80 GB · nombre WindowClient · interna <code>173.100.10.50/16</code>, gateway <code>173.100.10.1</code> · NAT por DHCP.</p></section>
+
+<section id="t7"><h2>Tasca 7 · Acceso remoto Client → Server</h2>
+<h3>Pasos</h3><ul><li><b>1. Habilitar:</b> Administrador del servidor → Servidor local → Escritorio remoto → «Permitir conexiones remotas a este equipo» + <b>NLA</b> (autenticación a nivel de red: el usuario se autentica antes de conectar).</li>
+<li><b>2. Permisos:</b> Seleccionar usuarios… (grupo <i>Remote Desktop Users</i>). Los <b>Administradores</b> ya tienen acceso implícito. Se añadió a <b>Fermin</b> (no admin).</li>
+<li><b>3. Firewall:</b> puerto <b>3389</b> (TCP/UDP); reglas de entrada «Escritorio remoto – Modo de usuario (TCP-In / UDP-In)» habilitadas.</li>
+<li><b>4. Conectar:</b> <code>mstsc</code> (Win+R) + IP o nombre del servidor. Admin: sí · Invitado: no · Fermin: sí (aviso de certificado) · Gavi (sin permiso): <b>no</b>, conexión denegada.</li>
+<li><b>5. Caso práctico:</b> por defecto 2 conexiones administrativas concurrentes; para permitir 4 → directiva «Limit number of connections» = Enabled, 4, y <code>gpupdate /force</code>.</li></ul>
+
+<h3>PowerShell</h3><ul>
+<li><code>Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server' -Name "fDenyTSConnections" -Value 0</code> → habilita RDP.</li>
+<li><code>Enable-NetFirewallRule -DisplayGroup "Remote Desktop"</code> → regla del firewall.</li>
+<li><code>Add-LocalGroupMember -Group "Remote Desktop Users" -Member "NomUsuari"</code> → da acceso remoto.</li>
+<li><code>Get-LocalGroupMember -Group "Remote Desktop Users"</code> → ver quién tiene acceso.</li>
+<li><code>Remove-LocalGroupMember -Group "Remote Desktop Users" -Member "NomUsuari"</code> → quitar acceso.</li></ul>
+<div class="note">El nombre del grupo depende del idioma del sistema: «Remote Desktop Users» (inglés) / «Usuarios de escritorio remoto» (español).</div></section>
+
+<section id="t8"><h2>Tasca 8 · Recursos y herramientas de Windows Client</h2>
+<h3>1. Compatibilidad (Windows 10 Pro en 15 equipos antiguos)</h3>
+<div class="tw"><table><tr><th></th><th>32 bits</th><th>64 bits</th></tr><tr><td>CPU</td><td>1 GHz</td><td>1 GHz</td></tr><tr><td>RAM</td><td>1 GB</td><td>2 GB</td></tr><tr><td>Disco</td><td>32 GB</td><td>32 GB</td></tr><tr><td>Gráficos / pantalla</td><td colspan="2">DirectX 9 + WDDM 1.0 · 800×600</td></tr></table></div>
+<ul><li><code>msinfo32</code> (información del sistema) y <code>systeminfo > maquinari.txt</code> (datos de hardware a un archivo).</li><li>Comprobar controladores (Administrador de dispositivos / web del fabricante): red, pantalla, procesador, discos, controladores ATA/SATA.</li><li>Conclusión: cumplen, pero 2 GB de RAM es muy poco; ampliar a 8 GB y/o mejorar el procesador.</li></ul>
+<h3>2. Modos de instalación</h3>
+<div class="tw"><table><tr><th>Edición</th><th>Dominio</th><th>BitLocker</th><th>Hyper-V</th><th>RDP anfitrión</th><th>Directivas</th></tr>
+<tr><td>Home</td><td>No</td><td>No completo</td><td>No</td><td>No (sí cliente)</td><td>No</td></tr>
+<tr><td>Pro</td><td>Sí</td><td>Sí</td><td>Sí (64 bits)</td><td>Sí</td><td>Sí</td></tr>
+<tr><td>Enterprise / Education</td><td colspan="5">Todo lo de Pro + gestión y seguridad avanzadas (Education orientada a centros)</td></tr></table></div>
+<ul><li><b>Limpia:</b> desde cero, puede borrar todo. <b>In-place:</b> sobre el Windows actual, conserva archivos y apps. <b>Migración:</b> traslada datos/configuración a otro equipo o instalación nueva. <b>USB/ISO/red:</b> de dónde arranca el instalador, no el tipo.</li>
+<li><b>32 bits:</b> hasta 4 GB de RAM. <b>64 bits:</b> muchísima más (teóricamente 16 EB). <b>BIOS/Legacy:</b> antiguo, suele ir con MBR. <b>UEFI:</b> moderno, GPT, Secure Boot, discos grandes.</li>
+<li><b>Escenarios:</b> aula → Education (red/USB) · oficina con dominio → Pro (limpia o in-place) · portátil personal → Home.</li></ul>
+<h3>3. Entorno personal</h3>
+<ul><li>Nombre de equipo, zona horaria, idioma, teclado y formato regional (Configuración).</li><li>Personalizar fondo/tema/inicio/barra: <b>requiere Windows activado</b>.</li><li>Explorador: Vista → Mostrar u ocultar → <i>Extensiones de nombre de archivo</i> y <i>Elementos ocultos</i>; fijar accesos rápidos.</li>
+<li><b>ProgramData</b> está oculta: guarda datos de aplicaciones y configuraciones comunes a todos los usuarios.</li>
+<li><b>Usuario estándar:</b> usa apps y cambia sus ajustes; no instala para todos ni cambia configuración importante. <b>Administrador:</b> instala software/drivers, cambia el sistema, gestiona cuentas (UAC pide confirmación). Se crean con <code>lusrmgr.msc</code> o <code>net user</code>.</li>
+<li><b>UAC:</b> por defecto avisa solo cuando una app intenta hacer cambios; se puede subir a «Notificarme siempre». Opciones de energía: apagar pantalla tras X minutos o nunca.</li></ul>
+<h3>4. Actualizaciones en red</h3>
+<div class="tw"><table><tr><th>Servicio</th><th>Qué es</th></tr>
+<tr><td>Windows Update</td><td>Descarga e instala desde Microsoft; para un equipo individual</td></tr>
+<tr><td>Windows Update for Business</td><td>La organización controla cuándo se actualizan los equipos</td></tr>
+<tr><td>WSUS</td><td>Rol de Windows Server: descarga de Microsoft y distribuye desde un servidor interno</td></tr>
+<tr><td>Delivery Optimization</td><td>Descarga partes de las actualizaciones y las comparte entre equipos, ahorrando ancho de banda</td></tr></table></div>
+<ul><li><b>Pausar:</b> aplaza actualizaciones unos días (evita instalación/reinicio). <b>Horas activas:</b> evitan reinicios automáticos en ese horario.</li>
+<li><b>Aplazar:</b> funciones (versiones anuales) hasta 1 año · calidad (parches mensuales) hasta 30 días.</li>
+<li>Historial / desinstalar: <code>wusa /uninstall</code> o Configuración.</li>
+<li>Deshabilitar: <code>services.msc</code> → Windows Update → Propiedades → Tipo de inicio: Deshabilitado.</li></ul>
+<div class="note">Ojo: deshabilitar Windows Update de forma permanente es una mala práctica de seguridad; la tarea lo pide solo como ejercicio.</div>
+<h3>5. Fin de soporte de Windows 10</h3>
+<ul><li>Terminó el <b>14 de octubre de 2025</b>: sigue funcionando pero sin actualizaciones de seguridad habituales (más riesgo de virus y ataques).</li>
+<li><b>ESU:</b> actualizaciones de seguridad ampliadas y de pago; ganan tiempo, sin funciones nuevas ni sustituyen la migración.</li>
+<li>Los 15 equipos (32 bits, 2 GB) no cumplen Windows 11 → mejorarlos, copia de seguridad, probar la migración en uno; ESU como solución temporal.</li></ul></section>
+
+<section id="quiz"><h2>Test final · 33 preguntas</h2><div id="qbox"></div></section>
+</main>
+<footer>¡Mucha suerte en el examen! 🍀</footer>
+<script>
+const Q=[
+["¿Qué es un sistema operativo?",["Un tipo de hardware","El software que gestiona todo entre hardware y software","Un navegador","Un antivirus"],1],
+["¿Qué partes componen un S.O.?",["CPU, RAM y disco","Kernel, UI, drivers y sistema de ficheros","Word, Excel y Edge","Solo el kernel"],1],
+["Un S.O. libre se caracteriza por…",["Código cerrado","Acceso total al código fuente","Ser solo de pago","Ser solo para móviles"],1],
+["¿Cuál es la versión más reciente de Windows Server de la tarea 2?",["2019","2022","2025","2016"],2],
+["RAM mínima de Windows Server según la tarea 2:",["512 MB","1 GB","2 GB","4 GB"],2],
+["¿Cuántos días dura la versión de evaluación de Windows Server?",["30","90","180","365"],2],
+["¿Qué edición de Server permite máquinas virtuales ilimitadas?",["Standard","Datacenter","Home","Education"],1],
+["Server Core es una instalación…",["Con escritorio completo","Sin interfaz gráfica","Solo para Azure","Para móviles"],1],
+["IP estática interna del servidor (tarea 3):",["173.100.10.50/16","192.168.1.10/24","173.100.10.10/16","10.0.0.1/8"],2],
+["¿Quién decide qué proceso obtiene la CPU?",["El PCB","El planificador (scheduler)","El driver","El firewall"],1],
+["¿Qué es el PID?",["Un tipo de disco","Una contraseña","Un identificador único de proceso","Un servicio de red"],2],
+["¿Qué atajo abre directamente el Administrador de tareas?",["Ctrl + Alt + Supr","Ctrl + Shift + Esc","Win + R","Alt + F4"],1],
+["¿Qué ocurre con varias instancias de svchost.exe?",["Es un error grave","Todas tienen el mismo PID","Cada una tiene un PID distinto","Solo puede haber una"],2],
+["¿Qué cierra todos los procesos con ese nombre?",["taskkill /IM notepad.exe","taskkill /PID 1234","taskmgr","tasklist"],0],
+["¿Qué comando guarda los datos del sistema en maquinari.txt?",["msinfo32 | maquinari.txt","systeminfo > maquinari.txt","dir > maquinari.txt","tasklist < maquinari.txt"],1],
+["RAM mínima de Windows 10 de 64 bits:",["1 GB","2 GB","4 GB","8 GB"],1],
+["¿Qué edición de Windows NO permite unirse a un dominio?",["Home","Pro","Enterprise","Education"],0],
+["Una actualización in-place…",["Borra todo el disco","Instala sobre el Windows actual conservando archivos","Solo se hace por red","Solo existe en Server"],1],
+["UEFI suele asociarse con discos…",["MBR","GPT","FAT12","Ninguno"],1],
+["Un proceso que espera una operación de E/S está en estado…",["Preparado","Ejecución","Espera (Blocked)","Finalizado"],2],
+["¿Para qué sirve la carpeta ProgramData (oculta)?",["Archivos personales del usuario","Datos de aplicaciones comunes a todos los usuarios","Papelera de reciclaje","Copias de seguridad"],1],
+["Un usuario estándar normalmente…",["Instala software para todos","Gestiona cuentas","Usa apps y cambia sus ajustes, pero no configuración importante","Es el administrador"],2],
+["WSUS es…",["Un antivirus","Un rol de Windows Server que distribuye actualizaciones desde un servidor interno","Un navegador","Una edición de Windows"],1],
+["Delivery Optimization sirve para…",["Eliminar actualizaciones","Compartir partes de las actualizaciones entre equipos","Formatear discos","Cambiar la IP"],1],
+["Las actualizaciones de funciones se pueden aplazar hasta…",["7 días","30 días","1 año","Nunca"],2],
+["¿Qué fecha marcó el fin de soporte de Windows 10?",["14 oct 2020","1 ene 2024","14 oct 2025","14 oct 2030"],2],
+["Las ESU son…",["Un antivirus gratuito","Actualizaciones de seguridad ampliadas y de pago","Una edición de Windows 11","Un tipo de partición"],1],
+["Puerto utilizado por el Escritorio remoto (RDP):",["80","443","22","3389"],3],
+["Grupo local que da acceso remoto a usuarios no administradores:",["Guests","Remote Desktop Users","Backup Operators","Power Users"],1],
+["Conexiones administrativas remotas concurrentes por defecto en Windows Server:",["1","2","4","Ilimitadas"],1],
+["¿Qué comando de PowerShell muestra los procesos?",["tasklist","Get-Process","Stop-Process","Get-Service"],1],
+["¿Qué comando de PowerShell finaliza un proceso?",["Stop-Process","Get-Process","Start-Process","Get-Service"],0],
+["¿Qué comando de PowerShell añade un usuario al grupo de escritorio remoto?",["Set-ItemProperty","Add-LocalGroupMember","Enable-NetFirewallRule","Get-Process"],1]
+];
+let i=0;const A=Array(Q.length).fill(null),box=document.getElementById("qbox");
+function show(){
+ if(i>=Q.length){const s=A.filter((a,k)=>a===Q[k][2]).length;
+  box.innerHTML=`<div class="res"><div class="big">${s}/${Q.length}</div><p>${s>=27?"¡Excelente! 🔥":s>=18?"Bien, repasa los fallos.":"Repasa los apuntes y vuelve a intentarlo."}</p><button class="btn" id="rs">Reiniciar</button> <button class="btn" id="bk">← Revisar</button></div>`;
+  document.getElementById("rs").onclick=()=>{A.fill(null);i=0;show()};document.getElementById("bk").onclick=()=>{i=Q.length-1;show()};return}
+ const [q,o,c]=Q[i],a=A[i];
+ box.innerHTML=`<div>Pregunta ${i+1} de ${Q.length}</div><div class="bar"><i style="width:${(i+1)/Q.length*100}%"></i></div><div class="q">${q}</div>`+
+ o.map((t,k)=>`<button class="opt ${a!==null?(k===c?"ok":k===a?"bad":""):""}" data-k="${k}" ${a!==null?"disabled":""}>${t}</button>`).join("")+
+ `<div class="nav"><button class="arrow" id="pv" ${i?"":"disabled"} aria-label="Anterior">←</button><span>${A.filter(x=>x!==null).length} respondidas</span><button class="arrow" id="nx" aria-label="Siguiente">→</button></div>`;
+ box.querySelectorAll(".opt").forEach(b=>b.onclick=()=>{A[i]=+b.dataset.k;show()});
+ document.getElementById("pv").onclick=()=>{i--;show()};document.getElementById("nx").onclick=()=>{i++;show()};
+}
+show();
+</script></body></html>
